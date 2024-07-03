@@ -1,11 +1,12 @@
-/*Variables*/
+/*Variables
 :root {
-  --primary: #525252;
-  --secondary: #848181;
-  --panel: #c4c3c3;
-  --text-primary: #fff;
+  --primary: #000000;
+  --secondary: #ccc9c9;
+  --panel: #767e86;
+  --text-primary: #ffffff;
   --text-secondary: #8d8d8d;
-}
+}*/
+
 /*Basic Reset Styles*/
 body {
   font-family: 'Noto Sans', sans-serif;
@@ -23,7 +24,7 @@ img {
 }
 
 h1, h3 {
-  color: var(--text-primary);
+  color: white;
   margin: 0.3rem 0;
   line-height: 45px;
 }
@@ -33,12 +34,14 @@ h1 {
 }
 
 h4 {
-  color: var(--accent);
+  color: white;
 }
 
 a {
   text-decoration: none;
-  color: var(--text-primary);
+  color: white;
+  font-weight: 600;
+  font-size: large;
 }
 
 ul {
@@ -47,9 +50,10 @@ ul {
 
 p {
   font-size: 0.9em;
-  color: black;
+  color: rgb(255, 255, 255);
   line-height: 25px;
   max-width: 35em;
+  font-weight: bold
 }
 
 .container {
@@ -94,28 +98,19 @@ footer .container
 /*Buttons*/
 .btn {
   display: inline-block;
-  background: linear-gradient(
-    310deg,
-    var(--accent),
-    var(--accent-darken)
-  );
   padding: 1em 2em;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.9em;
+  font-size: 1em;
   color: #fff;
 }
 
 .link {
-  color: var(--accent);
-}
-
-.link:hover {
-  color: var(--text-primary);
+  color: white;
 }
 
 .link span {
-  margin-right: 0.5em;
+  margin-right: 0.2em;
 }
 
 .link:hover span {
@@ -125,11 +120,7 @@ footer .container
 /*Header*/
 header {
   padding: 6em 3em 3em 3em;
-  background: linear-gradient(
-    180deg,
-    var(--primary),
-    var(--secondary)
-  );
+  background-image: url(/asset/img/flow.JPG);
   min-height: 100vh;
 }
 
@@ -145,16 +136,18 @@ header p {
   width: 100%;
   padding: 1.5em;
   z-index: 3;
+  font-size: 1.1em;
+  background-color: #111011;
 }
 
 .brand {
   font-weight: bold;
   font-size: 2em;
-  color: var(--accent);
+  color: white;
 }
 
 .brand:hover {
-  color: rgb(250, 250, 250);
+  color: rgb(65, 28, 150);
 }
 
 .menu {
@@ -162,14 +155,19 @@ header p {
 }
 
 .navbar li a:hover {
-  color: var(--accent);
+  color: rgb(152, 126, 214);
 }
 
 .menu-btn {
-  color: var(--text-primary);
+  color: white;
   font-size: 1.2em;
   cursor: pointer;
   display: none;
+  opacity: 50%;
+}
+
+.menu-btn:hover{
+  opacity: 100%;
 }
 
 .navbar-active {
@@ -189,12 +187,19 @@ header p {
 
 .profile-img {
   position: relative;
-  align-self: stretch;
+  transition: transform .2s; 
+  
+  
 }
 
 .img1 {
-  width: 25em;
+  width: 30%;
   z-index: 0;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
 }
 
 .img2 {
@@ -216,39 +221,15 @@ header p {
 }
 
 /*Theme Controls*/
-.theme-controls {
-  background: var(--panel);
-  position: fixed;
-  top: 50%;
-  right: -3em;
-  transform: translateY(-50%);
-  padding: 1em;
-  z-index: 3;  
-  flex-direction: column;
-  gap: 1.5em;
-}
-
-.theme-btn {
-  position: absolute;
-  top: 50%;
-  left: -3em;
-  transform: translateY(-50%);
-  padding: 1em;
-  background: var(--panel);
-  color: var(--text-primary);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
-}
-
-.theme-btn:hover {
-  background: var(--primary);
-}
-
 .profile-img:hover {
-  filter: brightness(150%);
+  -webkit-filter: brightness(170%);
+  filter: brightness(170%);
+  transform: scale(1.5);
+  
 }
 
 .btn:hover {
-  background: black;
+  background: rgb(74, 44, 206);
 }
 
 .color {
@@ -257,44 +238,9 @@ header p {
   border-radius: 50%;
 }
 
-.color1 {
-  background: #696969;
-  color: #696969;
-}
-.color2 {
-  background: #2d85ff;
-  color: #256fd5;
-}
-.color3 {
-  background: #ffa527;
-  color: #db8e23;
-}
-.color4 {
-  background: #ff56a8;
-  color: #ff56a8;
-}
-
-.dark-mode {
-  color: var(--text-primary);
-}
-
-.color, .dark-mode, .theme-btn {
-  cursor: pointer;
-}
-
-.theme-open {
-  right: 0;
-}
-
 /*===== About Section =====*/
 .about {
-  background: linear-gradient(
-    90deg,
-    var(--primary) 0%,
-    var(--primary) 50%,
-    var(--secondary) 50%,
-    var(--secondary) 100%
-  );
+  background: #6c41bd;
 }
 
 .services, .counters {
@@ -303,23 +249,19 @@ header p {
 
 .service,
 .sub-counters > div {
-  background: var(--panel);
+  background-color: #766d92;
   width: 19.5em;
   padding: 2em;
 }
 
 .service-icon {
-  font-size: 3em;
-  color: var(--accent);
+  font-size: em;
+  color: white;
   margin-bottom: 0.5em;
 }
 
 .service-main {
-  background: linear-gradient(
-    135deg,
-    var(--accent),
-    var(--accent-darken)
-  );
+  background: white
 }
 
 .service-main .link,
@@ -344,7 +286,7 @@ header p {
 
 .main-counter h1,
 .sub-counters h2 {
-  color: var(--accent);
+  color: white;
 }
 
 .main-counter h1 {
@@ -357,13 +299,7 @@ header p {
 
 /*===== Projects Section =====*/
 .projects {
-  background: linear-gradient(
-    180deg,
-    var(--secondary) 0%,
-    var(--secondary) 70%,
-    var(--primary) 70%,
-    var(--primary) 100%
-  );
+  background-color: #241e30;
 }
 
 .projects .container > div:nth-child(1) {
@@ -376,38 +312,42 @@ header p {
   width: 100%;
 }
 
+.project img:hover {
+transform: scale(1.5);
+}
+
 /*Contact Section*/
 .contact {
-  background: linear-gradient(
-    0deg,
-    var(--primary) 0%,
-    var(--primary) 50%,
-    var(--secondary) 50%,
-    var(--secondary) 100%
-  );
+  background: white;
 }
 
 .call-to-action {
-  background: var(--panel);
+  background-color: #45277e;
   padding: 3em;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 2em;
   margin-bottom: 3em;
+  -o-border-radius: 20px ;
+  -webkit-border-radius: 20px ;
+  -moz-border-radius: 20px ;
+  -ms-border-radius: 20px ;
+  border-radius: 20px ;
 }
 
 /*Footer*/
 footer {
-  background: var(--secondary); 
+  background: #766d92; 
 }
 
 footer > div {
-  background: var(--primary);
+  background: black;
   padding: 2em;
 }
 
 .footer-menu {
   gap: 2em;
   padding: 2em;
+  font-weight: 600;
 }
 
 .footer-menu a:hover {
